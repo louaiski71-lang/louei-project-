@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصميم وتطوير المواقع للتجار والأعمال</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #0f172a; 
+            color: #f8fafc; 
+            text-align: center; 
+            padding: 20px; 
+            line-height: 1.6;
+        }
+        header { 
+            background: linear-gradient(135deg, #1e293b, #0f172a); 
+            padding: 40px 20px; 
+            border-radius: 12px; 
+            margin-bottom: 25px;
+            border: 1px solid #334155;
+        }
+        h1 { color: #38bdf8; margin-bottom: 12px; font-size: 26px; }
+        p.subtitle { font-size: 16px; color: #94a3b8; }
+        
+        .container { 
+            max-width: 650px; 
+            margin: 0 auto; 
+            background: #1e293b; 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
+            border: 1px solid #334155;
+        }
+        
+        .services-list {
+            text-align: right;
+            margin: 20px 0;
+            padding: 15px;
+            background: #0f172a;
+            border-radius: 8px;
+        }
+        
+        .services-list p {
+            margin: 10px 0;
+            font-size: 15px;
+            color: #e2e8f0;
+        }
+
+        .contact-box {
+            background: #0284c7;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+
+        .contact-box h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .email-address {
+            background: #0369a1;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin: 10px 0;
+            word-break: break-all;
+            color: #f0f9ff;
+        }
+
+        .btn { 
+            display: block; 
+            width: 100%;
+            background: #22c55e; 
+            color: #ffffff; 
+            padding: 14px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            font-size: 16px;
+            margin-top: 15px; 
+            transition: 0.3s;
+        }
+        .btn:hover { background: #16a34a; }
+
+        footer { margin-top: 30px; color: #64748b; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>طور تجارتك بموقع إلكتروني احترافي 🚀</h1>
+        <p class="subtitle">نساعد التجار، المحلات، وأصحاب المشاريع في إطلاق مواقع وبينات حديثة وسريعة</p>
+    </header>
+
+    <div class="container">
+        <h3>✨ الخدمات التي نقدمها لك:</h3>
+        <div class="services-list">
+            <p>🌐 <strong>إنشاء مواقع للأنشطة التجارية:</strong> لعرض منتجاتك، معلوماتك، وموقعك الجغرافي للزبائن.</p>
+            <p>⚡ <strong>صفحات هبوط (Landing Pages):</strong> موجهة للعروض الترويجية والمنتجات المحددة.</p>
+            <p>📲 <strong>ربط الموقع بكود QR:</strong> لتسهيل وصول الزبائن لصفحتك بمسح واحد من هاتفهم.</p>
+            <p>📱 <strong>تصميم متجاوب:</strong> يعرض بشكل ممتاز على الهواتف والشاشات المختلفة.</p>
+        </div>
+
+        <div class="contact-box">
+            <h2>جاهز لفتح موقعك الجديد؟</h2>
+            <p>تواصل معنا عبر البريد الإلكتروني لمناقشة التفاصيل وتحديد خطة العمل:</p>
+            
+            <div class="email-address">📧 louaiski71@gmail.com</div>
+
+            <a href="mailto:louaiski71@gmail.com?subject=طلب%20إنشاء%20موقع%20إلكتروني" class="btn">إرسال رسالة مباشرة</a>
+        </div>
+    </div>
+
+    <footer>
+        جميع الحقوق محفوظة © 2026 | تطوير وإنشاء المواقع
+    </footer>
+
+</body>
+</html>
