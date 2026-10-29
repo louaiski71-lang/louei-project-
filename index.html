@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشروع مادة العلوم: صناعة الصابون</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: #1e293b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* --- واجهة الدخول (Intro Screen) --- */
+        #welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #welcome-screen h1 {
+            font-size: 2.5em;
+            color: #38bdf8;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+        }
+
+        #welcome-screen p {
+            font-size: 1.2em;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .enter-btn {
+            background: #0284c7;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+        }
+
+        .enter-btn:hover {
+            background: #0369a1;
+            transform: scale(1.05);
+        }
+
+        /* --- تصميم الكتاب (Book Container) --- */
+        .book-container {
+            width: 90%;
+            max-width: 650px;
+            min-height: 520px;
+            background: #fdfbf7;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 12px solid #cbd5e1;
+            border-left: 3px solid #e2e8f0;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #0284c7;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            font-size: 1.6em;
+        }
+
+        ul, ol {
+            line-height: 1.9;
+            font-size: 1.1em;
+            padding-right: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* --- أزرار التصفح (Navigation) --- */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .nav-btn {
+            background: #475569;
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .nav-btn:disabled {
+            background: #cbd5e1;
+            cursor: not-allowed;
+        }
+
+        .page-number {
+            font-weight: bold;
+            color: #64748b;
+        }
+
+        /* --- شريط الأسماء المطور --- */
+        .footer {
+            margin-top: 20px;
+            background: #f1f5f9;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px dashed #94a3b8;
+        }
+
+        .footer-title {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #475569;
+            margin-bottom: 6px;
+        }
+
+        .members-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الواجهة الترحيبية -->
+    <div id="welcome-screen">
+        <h1>مشروع علوم الطبيعة والحياة</h1>
+        <p>بحث شامل حول: صناعة الصابون والمكونات والفوائد</p>
+        <button class="enter-btn" onclick="startProject()">دخول للمشروع 📖</button>
+    </div>
+
+    <!-- كتاب المشروع -->
+    <div class="book-container">
+        
+        <!-- الورقة 1: المكونات -->
+        <div class="page active" id="page-1">
+            <h2>🧪 الصفحة 1: المكونات الأساسية</h2>
+            <ul>
+                <li><strong>الزيوت النباتية:</strong> مثل زيت الزيتون وزيت جوز الهند لتغذية البشرة.</li>
+                <li><strong>هيدروكسيد الصوديوم (الصودا الكاوية):</strong> المادة الكيميائية الأساسية لعملية التصبن.</li>
+                <li><strong>الماء المقطر:</strong> يستعمل لإذابة الصودا الكاوية بشكل آمن.</li>
+                <li><strong>إضافات طبيعية:</strong> زيوت عطرية (كاللافندر) وألوان وطين طبيعي.</li>
+            </ul>
+        </div>
+
+        <!-- الورقة 2: طريقة الصنع -->
+        <div class="page" id="page-2">
+            <h2>⚙️ الصفحة 2: طريقة الصنع</h2>
+            <ol>
+                <li>تحضير محلول الصودا الكاوية مع الماء المقطر بحذر وتركه ليبرد.</li>
+                <li>تسخين الزيوت وخلطها مع محلول الصودا تدريجياً.</li>
+                <li>الخفق المستمر حتى الوصول لمرحلة التكاثف (مرحلة الأثر).</li>
+                <li>صب الخليط في القوالب وتركه يتصلب من 24 إلى 48 ساعة.</li>
+                <li>تقطيع الصابون وتركه ينضج في مكان جاف لمدة 4 إلى 6 أسابيع.</li>
+            </ol>
+        </div>
+
+        <!-- الورقة 3: الفوائد والاستعمال -->
+        <div class="page" id="page-3">
+            <h2>✨ الصفحة 3: الفوائد وطريقة الاستعمال</h2>
+            <h3>الفوائد:</h3>
+            <ul>
+                <li>تنظيف العميق للبشرة والتخلص من الجراثيم.</li>
+                <li>ترطيب الجلد بفضل الغليسرين الطبيعي.</li>
+                <li>خالٍ من المواد الحافظة والكيماويات الضارة.</li>
+            </ul>
+            <h3>طريقة الاستعمال:</h3>
+            <p>يُرطب الوجه أو الجسم بالماء الفاتر، يُدلك الصابون للحصول على رغوة، ثم تُغسل بها البشرة وتُشطف جيدا بالماء.</p>
+        </div>
+
+        <!-- أزرار التصفح والتحكم -->
+        <div>
+            <div class="controls">
+                <button class="nav-btn" id="prev-btn" onclick="changePage(-1)" disabled>السابق</button>
+                <span class="page-number" id="page-num">ورقة 1 من 3</span>
+                <button class="nav-btn" id="next-btn" onclick="changePage(1)">التالي</button>
+            </div>
+
+            <!-- حقوق الأعضاء من التحت -->
+            <div class="footer">
+                <div class="footer-title">👨‍🔬 إعداد وأنجاز الأعضاء:</div>
+                <div class="members-tags">
+                    <span class="tag">بوقروط لؤي (القائد)</span>
+                    <span class="tag">بورزام اياد</span>
+                    <span class="tag">رمان محمد</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- برمجة التفاعل والتنقل -->
+    <script>
+        let currentPage = 1;
+        const totalPages = 3;
+
+        function startProject() {
+            document.getElementById('welcome-screen').style.display = 'none';
+        }
+
+        function changePage(direction) {
+            document.getElementById(`page-${currentPage}`).classList.remove('active');
+            currentPage += direction;
+            document.getElementById(`page-${currentPage}`).classList.add('active');
+
+            document.getElementById('page-num').innerText = `ورقة ${currentPage} من ${totalPages}`;
+
+            document.getElementById('prev-btn').disabled = (currentPage === 1);
+            document.getElementById('next-btn').disabled = (currentPage === totalPages);
+        }
+    </script>
+</body>
+  </html>
+  
